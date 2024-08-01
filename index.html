@@ -128,7 +128,7 @@
 	        <ul class="navbar-nav nav ml-auto">
 	          <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
 	          <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
-	          <li class="nav-item"><a href="#resume-section" id="downloadButton" class="nav-link"><span>Resume</span></a></li>
+	          <li class="nav-item"><a href="#resume-section" id="downloadButton" data-file="AnkleshTumanne_Resume.pdf" class="nav-link"><span>Resume</span></a></li>
 	          <li class="nav-item"><a href="#project-section" class="nav-link"><span>Projects</span></a></li>
 	          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
 	        </ul>
@@ -141,7 +141,7 @@
 	      	<div class="overlay"></div>
 	         <div class="container">
 	          <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-	          	<div class="one-third js-fullheight order-md-last img" style="background-image:url(images/myimage22.png);width: 40%;">
+	          	<div class="one-third js-fullheight order-md-last img" style="background-image:url(images/PortfoioPhoto.jpg);width: 40%;">
 	          	 <div class="overlay"></div>
 	          	</div>
 		          <div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
@@ -213,7 +213,7 @@
 								<div class="row">
 									<div class="col-sm-6 col-md-5">
 									  <div class="about-img">
-										<img src="images/myimage22.png" class="img-fluid rounded b-shadow-a" alt="">
+										<img src="" class="img-fluid rounded b-shadow-a" alt="">
 									  </div>
 									</div>
 									<!-- Details next to profile image -->
@@ -389,7 +389,7 @@
 
     		<div class="row justify-content-center mt-5">
     			<div class="col-md-6 text-center ftco-animate">
-    				<p><a href="#file:///C:/Users/HP/Downloads/AnkleshTumanne-FullStackMain1.pdf" class="btn btn-primary py-4 px-5">Download CV</a></p>
+    				<p><a href="https://resume-builder-test-new.masaischool.com/resume/?resumeId=66a9b3c96e6b499ee342ddef&profileId=self&templateName=TwoColumnMinimal&fontSize=medium" class="btn btn-primary py-4 px-5" data-file="AnkleshTumanne_Resume.pdf" id="downloadButton">Download CV</a></p>
     			</div>
     		</div>
     	</div>
@@ -631,13 +631,25 @@
   
   <script src="js/main.js"></script>
   <script>
-	document.getElementById('downloadButton').addEventListener('click', function() {
-	const link = document.createElement('a');
-	link.href = 'myresume.pdf'; // Path to your resume file
-	link.download = 'myresume.pdf'; // The name of the file to be downloaded
-	document.body.appendChild(link);
-	link.click();
-	document.body.removeChild(link);
+	// document.getElementById('downloadButton').addEventListener('click', function() {
+	// const link = document.createElement('a');
+	// link.href = 'myresume.pdf'; // Path to your resume file
+	// link.download = 'myresume.pdf'; // The name of the file to be downloaded
+	// document.body.appendChild(link);
+	// link.click();
+	// document.body.removeChild(link);
+// });
+document.querySelectorAll('#downloadButton').forEach(button => {
+    button.addEventListener('click', function() {
+        const fileName = button.getAttribute('data-file');
+        const link = document.createElement('a');
+        link.href = fileName; // Path to your resume file
+        link.download = fileName; // The name of the file to be downloaded
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+		window.open(fileName, '_blank');
+    });
 });
 
 </script>
