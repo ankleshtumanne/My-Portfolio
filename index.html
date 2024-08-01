@@ -78,7 +78,28 @@
   background-color: #ccc;
   animation: typing-cursor 0.5s ease-in-out infinite;
 }
-
+.one-third {
+            background-image: url('images/PortfoioPhoto.jpg');
+            width: 40%;
+            padding-top: 20px; /* Adjust the value as needed */
+            padding-bottom: 20px; /* Adjust the value as needed */
+            background-size: 80%; /* Adjust the value to decrease the image size */
+            background-position: center;
+            background-repeat: no-repeat;
+			border-radius: 10px;
+			overflow: hidden;
+        }
+        /* Ensure full height for js-fullheight class */
+        .js-fullheight {
+            height: 60vh; /* Adjust as needed */
+        }
+        /* Responsive adjustments if needed */
+        @media (max-width: 768px) {
+            .one-third {
+                width: 100%; /* Full width on smaller screens */
+                background-size: cover; /* Cover the full width on smaller screens */
+            }
+        }
 @keyframes typing {
   from {
     width: 0;
@@ -128,7 +149,7 @@
 	        <ul class="navbar-nav nav ml-auto">
 	          <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
 	          <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
-	          <li class="nav-item"><a href="#resume-section" id="downloadButton" data-file="AnkleshTumanne_Resume.pdf" class="nav-link"><span>Resume</span></a></li>
+	          <li class="nav-item"><a href="#resume-section" id="downloadButton" data-file="AnkleshTumanne-Resume.pdf" class="nav-link"><span>Resume</span></a></li>
 	          <li class="nav-item"><a href="#project-section" class="nav-link"><span>Projects</span></a></li>
 	          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
 	        </ul>
